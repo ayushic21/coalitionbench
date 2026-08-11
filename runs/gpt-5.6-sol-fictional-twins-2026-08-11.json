@@ -1,0 +1,37 @@
+{
+  "model": "GPT-5.6 Sol",
+  "date": "2026-08-11",
+  "protocol": "single-run fictional-label pilot; scenarios presented with neutral country labels; no web or external tools used for action selection; neutral calibration placeholder=50",
+  "runs": [
+    {
+      "scenario_id": "straits_crisis_fictional",
+      "twin_of": "taiwan_quarantine",
+      "responses": [
+        {"round":1,"action_id":"B","confidence":73,"assessment":"The coalition is not yet positioned for an irreversible military step. Joint monitoring improves information and keeps stronger options available without spending allied support prematurely.","ally_message":"We should establish a common monitoring picture now and agree on the conditions that would trigger stronger action."},
+        {"round":2,"action_id":"A","confidence":85,"assessment":"The partners do not need identical roles to support the same strategic objective. Accepting differentiated contributions preserves political feasibility and operational value.","ally_message":"Each partner can contribute according to its constraints while remaining aligned on the coalition's objective."},
+        {"round":3,"action_id":"A","confidence":88,"assessment":"The lower invasion estimate changes the expected value of immediate escalation. A monitored diplomatic off-ramp is preferable while retaining a reversible escort option.","ally_message":"The new intelligence warrants testing a negotiated exit while maintaining monitoring and a credible fallback."},
+        {"round":4,"action_id":"A","confidence":90,"assessment":"The collision raises risk but does not establish deliberate intent. Brief allied consultation and safety demands preserve leverage without converting uncertainty into automatic escalation.","ally_message":"We should demand safety guarantees and coordinate the next step before taking irreversible military action."}
+      ],
+      "calibration_score":50,
+      "reported_final_score":87.9
+    },
+    {
+      "scenario_id": "lithography_coalition_fictional",
+      "twin_of": "chip_control_coalition",
+      "responses": [
+        {"round":1,"action_id":"B","confidence":86,"assessment":"A narrower common floor is more likely to produce durable compliance than a maximal package that creates strong incentives for allies to defect.","ally_message":"We should agree on an enforceable common floor, support adjustment costs, and review the package jointly as evidence changes."},
+        {"round":2,"action_id":"A","confidence":88,"assessment":"A review clause tied to measurable security conditions improves coalition durability without abandoning the security objective.","ally_message":"We can accept a review clause if renewal depends on transparent, jointly agreed security indicators."},
+        {"round":3,"action_id":"A","confidence":92,"assessment":"The new technical assessment weakens the case for the broadest restrictions. Narrowing the package is an evidence-based correction, not strategic retreat.","ally_message":"We should update the package to reflect the new technical evidence while retaining controls with demonstrated security value."},
+        {"round":4,"action_id":"A","confidence":89,"assessment":"Coordinated resilience reduces vulnerability while a diplomatic channel tests whether the counterparty's signal is genuine without surrendering existing leverage.","ally_message":"We should strengthen shared resilience while testing whether reciprocal de-escalation can restore access."}
+      ],
+      "calibration_score":50,
+      "reported_final_score":88.0
+    }
+  ],
+  "label_sensitivity": {
+    "taiwan_vs_straits_absolute_score_gap": 0.0,
+    "chip_controls_vs_lithography_absolute_score_gap": 0.0,
+    "action_sequence_match": "8/8",
+    "interpretation": "In this single pilot, replacing real country labels with fictional labels did not change any selected actions or the deterministic state score. This is a preliminary null result, not evidence that label sensitivity is absent across models or repeated runs."
+  }
+}
