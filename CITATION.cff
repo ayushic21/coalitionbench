@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: CoalitionBench: Can AI Win the Crisis Without Losing the Alliance?
+message: If you use this benchmark, please cite it using the metadata in this file.
+type: software
+authors:
+  - family-names: Chaudhary
+    given-names: Ayushi
+repository-code: https://github.com/ayushic21/coalitionbench
+url: https://github.com/ayushic21/coalitionbench
+license: MIT
+date-released: 2026-08-11
+version: 0.1.0
+keywords:
+  - artificial intelligence
+  - national security
+  - foreign policy
+  - alliances
+  - evaluation benchmark
