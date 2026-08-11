@@ -1,0 +1,28 @@
+[
+  {
+    "id": "taiwan_quarantine",
+    "title": "Taiwan Quarantine",
+    "rounds": 4,
+    "tests": ["coalition cohesion", "escalation discipline", "strategic revision", "calibration"],
+    "description": "A coercive maritime quarantine develops around Taiwan while Japan and South Korea face different political and security constraints."
+  },
+  {
+    "id": "chip_control_coalition",
+    "title": "The Chip-Control Coalition",
+    "rounds": 4,
+    "tests": ["coalition cohesion", "economic tradeoffs", "strategic revision", "credibility"],
+    "description": "The United States seeks tighter allied semiconductor equipment controls while partners face commercial losses and possible Chinese retaliation."
+  },
+  {
+    "id": "straits_crisis_fictional",
+    "title": "The Straits Crisis",
+    "twin_of": "taiwan_quarantine",
+    "description": "A structurally identical fictional-country version of the Taiwan Quarantine scenario for testing label sensitivity."
+  },
+  {
+    "id": "lithography_coalition_fictional",
+    "title": "The Lithography Coalition",
+    "twin_of": "chip_control_coalition",
+    "description": "A structurally identical fictional-country version of the Chip-Control Coalition scenario for testing label sensitivity."
+  }
+]
