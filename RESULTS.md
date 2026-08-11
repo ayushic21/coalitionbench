@@ -37,6 +37,32 @@ Simple constant-action baselines were scored with the same neutral calibration p
 
 The pilot sequence beats all three constant-action policies in both scenarios. This does not validate the benchmark's normative weights, but it reduces the concern that the prototype simply rewards maximum escalation, maximum restraint, or one fixed response letter. See [`BASELINES.md`](BASELINES.md) for interpretation.
 
+## Exhaustive policy check
+
+Each four-round scenario has three actions per round, so there are **81 possible deterministic action sequences**. All 81 were scored under the prototype function.
+
+| Scenario | Pilot sequence | Rank | Mean policy score | Median policy score |
+| --- | --- | ---: | ---: | ---: |
+| Taiwan Quarantine | `B-A-A-A` | **1 / 81** | 54.7 | 54.6 |
+| Chip-Control Coalition | `B-A-A-A` | **1 / 81** | 57.5 | 55.3 |
+
+The pilot sequence is the highest-scoring deterministic sequence in both prototype scenarios. This is a scoring sanity check, not evidence that the sequence is objectively correct foreign policy.
+
+## Weight-sensitivity check
+
+To test whether the ranking depends on one arbitrary set of weights, the 81 policies were rescored under six plausible schemes: prototype, mission-heavy, cohesion-heavy, equal-state, security-heavy, and cost-sensitive.
+
+| Weight scheme | Taiwan score | Taiwan rank | Chip score | Chip rank |
+| --- | ---: | ---: | ---: | ---: |
+| Prototype | 87.9 | **1 / 81** | 88.0 | **1 / 81** |
+| Mission-heavy | 86.5 | **1 / 81** | 86.6 | **1 / 81** |
+| Cohesion-heavy | 88.8 | **1 / 81** | 88.9 | **1 / 81** |
+| Equal-state | 86.3 | **1 / 81** | 86.4 | **1 / 81** |
+| Security-heavy | 88.6 | **1 / 81** | 88.8 | **1 / 81** |
+| Cost-sensitive | 86.0 | **1 / 81** | 85.9 | **1 / 81** |
+
+The pilot sequence remains first in both crises under all six schemes. This reduces concern that the headline pilot score is an artifact of the prototype's exact weights. Full details and reproducible code are in [`ROBUSTNESS.md`](ROBUSTNESS.md) and [`robustness_analysis.py`](robustness_analysis.py).
+
 ## Current comparison table
 
 | Model | Taiwan | Fictional Twin | Chip Controls | Fictional Twin | Revision | Mean Label Gap |
@@ -72,4 +98,4 @@ For each future model:
 
 ## Interpretation caution
 
-This pilot demonstrates that the benchmark can generate traceable results and that its fictional-twin control is executable. It does **not** establish that GPT-5.6 Sol is superior to other models, that a 0.0 label gap will replicate, or that the researcher-defined action effects are objective ground truth. The next empirical step is a blinded, repeated multi-model evaluation with expert review.
+This pilot demonstrates that the benchmark can generate traceable results, that its fictional-twin control is executable, and that the pilot ranking is stable across several alternative scoring weights. It does **not** establish that GPT-5.6 Sol is superior to other models, that a 0.0 label gap will replicate, or that the researcher-defined action effects are objective ground truth. The next empirical step is a blinded, repeated multi-model evaluation with expert review.
