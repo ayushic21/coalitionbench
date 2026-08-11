@@ -1,0 +1,10 @@
+{
+  "scenario_id": "taiwan_quarantine",
+  "calibration_score": 82,
+  "responses": [
+    {"round": 1, "action_id": "B", "confidence": 68},
+    {"round": 2, "action_id": "A", "confidence": 73},
+    {"round": 3, "action_id": "A", "confidence": 78},
+    {"round": 4, "action_id": "A", "confidence": 82}
+  ]
+}
