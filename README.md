@@ -4,11 +4,25 @@
 
 CoalitionBench is an evaluation benchmark for frontier AI systems used as strategic-policy advisers. It tests whether a model can pursue national objectives while preserving coalition cohesion, adapting when intelligence changes, calibrating uncertainty, and avoiding unnecessary escalation.
 
+## What CoalitionBench adds
+
+Existing strategic-AI evaluations illuminate different pieces of the problem. CFPD-Benchmark measures diplomatic preferences across hundreds of expert-crafted one-shot scenarios; AI Diplomacy exposes negotiation, cooperation, deception, and betrayal among competing models; CivBench tests whether agents can sustain and execute strategies over long horizons in a changing game environment.
+
+CoalitionBench isolates a different capability: **coalition management under asymmetric allied constraints**. The model is not rewarded simply for picking an aggressive, cautious, or apparently successful option. It must pursue the principal's objective while partners have different red lines, economic exposure, domestic politics, and tolerance for escalation. It must then live with those consequences in later rounds.
+
+A second control asks whether the same strategic structure produces different advice once real country names are removed. This creates a direct test of **country-label sensitivity** alongside strategic performance.
+
 ## Core idea
 
-Strategic advice is rarely a single-player problem. A recommendation can look optimal for one government and still fail if it fractures the coalition needed to execute it. CoalitionBench turns that tension into a sequential evaluation where the model inherits the consequences of its prior choices.
+Foreign policy is rarely a single-player problem. A recommendation can look optimal for one government and still fail if it fractures the coalition needed to execute it. CoalitionBench turns that tension into a sequential evaluation where the model inherits the consequences of its prior choices.
 
 Each crisis unfolds across four rounds. Decisions change five strategic state variables: mission progress, coalition cohesion, escalation control, credibility, and cost control. New intelligence and allied reactions then reshape the next decision.
+
+## Behavioral trace
+
+In addition to the quantitative score, CoalitionBench records the model's stated assessment and message to allies every round. A next-step **commitment trace** diagnostic compares what the model says it intends to preserve, threaten, or reconsider with what it actually recommends later.
+
+This is meant to surface a knowing-doing gap that outcome scores can miss: a model may correctly identify an allied red line, promise consultation, or say new evidence should change the plan, then recommend an action that contradicts that reasoning one round later. Rational revision is not penalized; unexplained contradiction is the behavior of interest.
 
 ## Scenario suite
 
@@ -21,7 +35,7 @@ The United States seeks tighter allied semiconductor-equipment controls while Ja
 ### Fictional twins
 Both scenarios have fully materialized fictional-country twins in [`fictional_scenarios.json`](fictional_scenarios.json). The strategic structure and action effects remain constant while real country names are replaced with neutral labels. The resulting **label-sensitivity gap** tests whether geopolitical labels change recommendations independently of the underlying decision problem.
 
-## First live pilot
+## First implementation pilot
 
 A first non-simulated implementation run used GPT-5.6 Sol on August 11, 2026. This is an n=1 pilot, not a leaderboard.
 
@@ -62,9 +76,18 @@ See [`METHODOLOGY.md`](METHODOLOGY.md) for the full protocol and limitations.
 }
 ```
 
+For expanded runs, a commitment trace can add:
+
+```json
+{
+  "strategic_intent": "What I am trying to preserve or accomplish next round.",
+  "red_line": "What development would cause me to change course."
+}
+```
+
 ## Repository map
 
-- [`index.html`](index.html) — interactive microsite
+- [`index.html`](index.html) — microsite
 - [`pilot-results.html`](pilot-results.html) — detailed pilot results
 - [`scenarios.json`](scenarios.json) — real-world prototype scenarios
 - [`fictional_scenarios.json`](fictional_scenarios.json) — materialized fictional twins
@@ -81,6 +104,12 @@ Future comparisons should use fresh contexts, identical instructions, identical 
 
 Claude, Gemini, Qwen, and DeepSeek results are intentionally left unreported until they are actually run under the common protocol.
 
+## Related benchmarks
+
+- CFPD-Benchmark: https://arxiv.org/abs/2503.06263
+- AI Diplomacy: https://github.com/GoodStartLabs/AI_Diplomacy
+- CivBench: https://www.lwilko.com/blog/i-gave-an-ai-a-civilization
+
 ## Author
 
-Ayushi Chaudhary is a senior at Temple University studying international business and economics, with research interests in AI, economic security, and Indo-Pacific alliances. She was a Boren Scholar in Japan and a 2026 Young Trilateral Leaders delegate, where her work focused on U.S.-Japan-ROK cooperation on emerging technology and security.
+Ayushi Chaudhary is a senior at Temple University studying international business and economics, with research interests in AI, economic security, and Indo-Pacific alliances. She was a Boren Scholar in Japan and a 2026 Young Trilateral Leaders delegate, where she explored U.S.-Japan-ROK cooperation on emerging technology and security.
