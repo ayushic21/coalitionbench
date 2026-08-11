@@ -1,0 +1,29 @@
+{
+  "model": "GPT-5.6 Sol",
+  "date": "2026-08-11",
+  "protocol": "single-run pilot; no web or external tools used for action selection; neutral calibration placeholder=50",
+  "runs": [
+    {
+      "scenario_id": "taiwan_quarantine",
+      "responses": [
+        {"round": 1, "action_id": "B", "confidence": 72, "assessment": "The immediate priority is to preserve allied participation while improving situational awareness and keeping escorts available as a reversible next step.", "ally_message": "We will coordinate monitoring now and review stronger measures together as the intelligence picture develops."},
+        {"round": 2, "action_id": "A", "confidence": 84, "assessment": "Japan and South Korea can contribute differently without weakening the common objective; demanding identical commitments would create avoidable political fractures.", "ally_message": "Our coalition is unified on the objective while each ally contributes in ways consistent with its security responsibilities and domestic constraints."},
+        {"round": 3, "action_id": "A", "confidence": 88, "assessment": "The lower invasion estimate materially changes the risk calculation, making a monitored, negotiated off-ramp preferable to automatic escalation while retaining a reversible escort option.", "ally_message": "New intelligence supports testing a diplomatic off-ramp while we maintain monitoring and the capacity to protect shipping if coercion continues."},
+        {"round": 4, "action_id": "A", "confidence": 90, "assessment": "With no deaths, uncertain intent, and an offer of talks, a 24-hour allied consultation preserves deterrence without prematurely converting an accident into an armed confrontation.", "ally_message": "We will demand immediate safety guarantees and consult as a coalition before taking any irreversible military step."}
+      ],
+      "calibration_score": 50,
+      "reported_final_score": 87.9
+    },
+    {
+      "scenario_id": "chip_control_coalition",
+      "responses": [
+        {"round": 1, "action_id": "B", "confidence": 86, "assessment": "A narrower enforceable floor is more likely to produce durable allied compliance than a maximal package that creates incentives to defect.", "ally_message": "We propose a common security floor, adjustment support, and a joint mechanism to revisit the controls as the evidence changes."},
+        {"round": 2, "action_id": "A", "confidence": 88, "assessment": "A review clause tied to measurable security triggers makes the policy more credible and sustainable without abandoning the underlying security objective.", "ally_message": "We can support a review clause if renewal is tied to transparent, jointly agreed security indicators."},
+        {"round": 3, "action_id": "A", "confidence": 92, "assessment": "The new technical evidence reduces the expected benefit of the broadest controls, so narrowing the package is an evidence-based correction rather than a concession.", "ally_message": "We should adjust the package to the updated technical evidence and preserve the restrictions that still produce meaningful security value."},
+        {"round": 4, "action_id": "A", "confidence": 89, "assessment": "Diversification reduces vulnerability while a diplomatic channel tests whether Beijing's signal is genuine without giving up the coalition's existing controls.", "ally_message": "We will coordinate resilience measures while jointly testing whether reciprocal de-escalation can restore material access."}
+      ],
+      "calibration_score": 50,
+      "reported_final_score": 88.0
+    }
+  ]
+}
