@@ -48,7 +48,13 @@ A first non-simulated implementation run used GPT-5.6 Sol on August 11, 2026. Th
 
 The fictional-label pilot produced identical actions in all eight paired decisions and a **0.0 mean absolute score gap**. This is a preliminary null result, not evidence that label sensitivity is absent across models.
 
-The pilot also outperformed three constant-action sanity-check baselines in both scenarios. See [`RESULTS.md`](RESULTS.md) and [`BASELINES.md`](BASELINES.md).
+## Robustness checks
+
+The pilot was compared against **all 81 possible deterministic four-round action sequences** in each prototype crisis. `B-A-A-A` ranks **1/81 in both scenarios** under the prototype score.
+
+To test whether that ranking depends on one arbitrary choice of weights, all 81 policies were rescored under six plausible schemes: prototype, mission-heavy, cohesion-heavy, equal-state, security-heavy, and cost-sensitive. The pilot sequence remains **1/81 under all six schemes in both crisis families**.
+
+This strengthens the scoring validation but does not replace repeated multi-model trials or expert review. See [`ROBUSTNESS.md`](ROBUSTNESS.md) and [`robustness_analysis.py`](robustness_analysis.py).
 
 ## Scoring
 
@@ -88,13 +94,15 @@ For expanded runs, a commitment trace can add:
 ## Repository map
 
 - [`index.html`](index.html) — microsite
-- [`pilot-results.html`](pilot-results.html) — detailed pilot results
+- [`pilot-results.html`](pilot-results.html) — detailed pilot and robustness results
 - [`scenarios.json`](scenarios.json) — real-world prototype scenarios
 - [`fictional_scenarios.json`](fictional_scenarios.json) — materialized fictional twins
 - [`evaluator.py`](evaluator.py) — transparent scoring implementation
 - [`METHODOLOGY.md`](METHODOLOGY.md) — evaluation design and limitations
 - [`RESULTS.md`](RESULTS.md) — pilot results and reporting protocol
-- [`BASELINES.md`](BASELINES.md) — scoring sanity checks
+- [`BASELINES.md`](BASELINES.md) — constant-policy sanity checks
+- [`ROBUSTNESS.md`](ROBUSTNESS.md) — exhaustive policy and weight sensitivity checks
+- [`robustness_analysis.py`](robustness_analysis.py) — reproducible robustness script
 - [`runs/`](runs/) — raw model traces
 - [`SUBMISSION.md`](SUBMISSION.md) — ChinaTalk submission text
 
