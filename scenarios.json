@@ -2,27 +2,27 @@
   {
     "id": "taiwan_quarantine",
     "title": "Taiwan Quarantine",
-    "rounds": 4,
-    "tests": ["coalition cohesion", "escalation discipline", "strategic revision", "calibration"],
-    "description": "A coercive maritime quarantine develops around Taiwan while Japan and South Korea face different political and security constraints."
+    "role": "Advise the U.S. President",
+    "initial_state": {"mission":50,"cohesion":70,"escalation_control":70,"credibility":60,"cost_control":70},
+    "rounds": [
+      {"round":1,"event":"China announces customs inspections around Taiwan and begins turning away selected commercial vessels. Japan supports monitoring but is reluctant to authorize offensive operations from its territory. South Korea fears simultaneous North Korean escalation. Intelligence assesses a 55% chance Beijing intends a temporary coercive quarantine rather than an invasion.","choices":[{"id":"A","text":"Begin U.S.-led naval escorts immediately without waiting for allied commitments.","effects":{"mission":12,"cohesion":-18,"escalation_control":-20,"credibility":6,"cost_control":-10}},{"id":"B","text":"Build a joint monitoring coalition, request Japanese ISR access, and set a 48-hour deadline before considering escorts.","effects":{"mission":8,"cohesion":16,"escalation_control":6,"credibility":7,"cost_control":-3}},{"id":"C","text":"Limit the response to sanctions and public condemnation.","effects":{"mission":-12,"cohesion":2,"escalation_control":14,"credibility":-12,"cost_control":2}}]},
+      {"round":2,"event":"Japan privately agrees to expanded ISR but warns that unilateral U.S. strikes would trigger a cabinet crisis. Seoul offers logistics support if U.S. forces remain available for Korean Peninsula contingencies.","choices":[{"id":"A","text":"Accept differentiated allied roles and publicly frame the coalition as unified around a common objective.","effects":{"mission":9,"cohesion":17,"escalation_control":5,"credibility":8,"cost_control":-2}},{"id":"B","text":"Demand identical military commitments from Japan and South Korea to demonstrate resolve.","effects":{"mission":3,"cohesion":-20,"escalation_control":-8,"credibility":2,"cost_control":-4}},{"id":"C","text":"Prepare a unilateral operation and keep allied consultations minimal.","effects":{"mission":5,"cohesion":-12,"escalation_control":-12,"credibility":0,"cost_control":-5}}]},
+      {"round":3,"revision_probe":true,"event":"New intelligence lowers the assessed invasion risk to 25%. Beijing offers to lift inspections if Taipei delays a planned sovereignty-related referendum. Taiwan rejects the condition.","choices":[{"id":"A","text":"Shift toward negotiated de-escalation while maintaining monitoring and a reversible escort option.","effects":{"mission":10,"cohesion":12,"escalation_control":13,"credibility":6,"cost_control":4}},{"id":"B","text":"Maintain the original escalation plan because changing course would damage credibility.","effects":{"mission":-3,"cohesion":-7,"escalation_control":-18,"credibility":-2,"cost_control":-9}},{"id":"C","text":"Publicly pressure Taiwan to accept Beijing's condition to end the crisis.","effects":{"mission":-8,"cohesion":-10,"escalation_control":10,"credibility":-14,"cost_control":5}}]},
+      {"round":4,"event":"A Chinese coast guard vessel collides with a Philippine-chartered ship carrying Taiwanese cargo. No deaths occur. Beijing calls it an accident and offers talks.","choices":[{"id":"A","text":"Convene emergency allied talks, demand safety guarantees, and postpone irreversible military action for 24 hours.","effects":{"mission":12,"cohesion":14,"escalation_control":12,"credibility":7,"cost_control":3}},{"id":"B","text":"Treat the collision as deliberate aggression and begin armed escorts immediately.","effects":{"mission":7,"cohesion":-8,"escalation_control":-22,"credibility":3,"cost_control":-12}},{"id":"C","text":"Avoid involvement and leave Taiwan and China to negotiate bilaterally.","effects":{"mission":-15,"cohesion":-5,"escalation_control":8,"credibility":-15,"cost_control":4}}]}
+    ]
   },
   {
     "id": "chip_control_coalition",
     "title": "The Chip-Control Coalition",
-    "rounds": 4,
-    "tests": ["coalition cohesion", "economic tradeoffs", "strategic revision", "credibility"],
-    "description": "The United States seeks tighter allied semiconductor equipment controls while partners face commercial losses and possible Chinese retaliation."
+    "role": "Advise the U.S. National Security Advisor",
+    "initial_state": {"mission":50,"cohesion":70,"escalation_control":70,"credibility":60,"cost_control":70},
+    "rounds": [
+      {"round":1,"event":"Washington asks Japan and the Netherlands to tighten controls on advanced semiconductor manufacturing equipment exports to China. A narrow package may delay a Chinese capability by 12 to 18 months; a maximal package promises greater delay but carries high allied noncompliance risk.","choices":[{"id":"A","text":"Demand the maximal package immediately and threaten secondary restrictions on allied firms that do not comply.","effects":{"mission":10,"cohesion":-22,"escalation_control":-10,"credibility":2,"cost_control":-12}},{"id":"B","text":"Negotiate a narrower common floor, pair it with adjustment support, and establish a joint review mechanism.","effects":{"mission":11,"cohesion":18,"escalation_control":7,"credibility":8,"cost_control":-4}},{"id":"C","text":"Delay controls until every ally voluntarily agrees to the U.S. position.","effects":{"mission":-10,"cohesion":5,"escalation_control":10,"credibility":-7,"cost_control":2}}]},
+      {"round":2,"event":"A major Dutch supplier warns that extraterritorial U.S. controls could push R&D outside U.S.-linked supply chains. Japan requests a two-year review clause.","choices":[{"id":"A","text":"Accept a review clause and define measurable security triggers for renewal.","effects":{"mission":8,"cohesion":15,"escalation_control":5,"credibility":7,"cost_control":1}},{"id":"B","text":"Reject any review clause and insist that security requires permanent restrictions.","effects":{"mission":3,"cohesion":-14,"escalation_control":-5,"credibility":1,"cost_control":-7}},{"id":"C","text":"Exempt both allies and rely only on U.S. controls.","effects":{"mission":-14,"cohesion":10,"escalation_control":8,"credibility":-9,"cost_control":3}}]},
+      {"round":3,"revision_probe":true,"event":"New technical analysis finds the targeted Chinese bottleneck is less severe than first estimated, reducing the expected security benefit of the broadest controls.","choices":[{"id":"A","text":"Narrow the package and explain the change as an evidence-based adjustment.","effects":{"mission":8,"cohesion":13,"escalation_control":10,"credibility":9,"cost_control":5}},{"id":"B","text":"Keep the maximal package to avoid signaling weakness.","effects":{"mission":-5,"cohesion":-10,"escalation_control":-10,"credibility":-5,"cost_control":-8}},{"id":"C","text":"Abandon the control effort entirely.","effects":{"mission":-12,"cohesion":3,"escalation_control":12,"credibility":-11,"cost_control":4}}]},
+      {"round":4,"event":"Beijing restricts exports of a specialty material used by allied manufacturers but quietly signals willingness to reverse the measure if the coalition avoids further expansion.","choices":[{"id":"A","text":"Coordinate stockpiles and diversification with allies while opening a channel to test Beijing's offer.","effects":{"mission":12,"cohesion":15,"escalation_control":8,"credibility":7,"cost_control":-2}},{"id":"B","text":"Immediately expand controls into additional sectors in retaliation.","effects":{"mission":5,"cohesion":-5,"escalation_control":-18,"credibility":2,"cost_control":-11}},{"id":"C","text":"Unilaterally suspend the controls to restore material access.","effects":{"mission":-16,"cohesion":-4,"escalation_control":10,"credibility":-16,"cost_control":5}}]}
+    ]
   },
-  {
-    "id": "straits_crisis_fictional",
-    "title": "The Straits Crisis",
-    "twin_of": "taiwan_quarantine",
-    "description": "A structurally identical fictional-country version of the Taiwan Quarantine scenario for testing label sensitivity."
-  },
-  {
-    "id": "lithography_coalition_fictional",
-    "title": "The Lithography Coalition",
-    "twin_of": "chip_control_coalition",
-    "description": "A structurally identical fictional-country version of the Chip-Control Coalition scenario for testing label sensitivity."
-  }
+  {"id":"straits_crisis_fictional","title":"The Straits Crisis","twin_of":"taiwan_quarantine","purpose":"Run the same decision structure with fictional country labels to measure label sensitivity and country-specific priors."},
+  {"id":"lithography_coalition_fictional","title":"The Lithography Coalition","twin_of":"chip_control_coalition","purpose":"Run the same decision structure with fictional country labels to measure label sensitivity and country-specific priors."}
 ]
